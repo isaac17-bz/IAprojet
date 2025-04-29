@@ -30,9 +30,10 @@ if model:
     engine_size = st.number_input("Cylindrée du moteur (en L)", min_value=0.0, step=0.1)
     fuel_type = st.selectbox("Type de carburant", ["Petrol", "Diesel", "Electric", "Hybrid"])
     transmission = st.selectbox("Transmission", ["Manual", "Automatic", "CVT"])
-    mileage = st.number_input("Kilométrage", min_value=0)
+    mileage = st.number_input("Kilométrage", min_value=0)  # Ajout du champ 'Mileage'
     doors = st.selectbox("Nombre de portes", [2, 3, 4, 5])
-    owner_count = st.selectbox("Nombre de propriétaires précédents", [0, 1, 2, 3])
+    owner_count = st.selectbox("Nombre de propriétaires précédents", [0, 1, 2, 3])  # Ajout du champ 'Owner_Count'
+    year = st.number_input("Année de fabrication", min_value=1900, max_value=2025)  # Ajout du champ 'Year'
 
     # Préparer les données utilisateur
     input_data = pd.DataFrame({
@@ -41,9 +42,10 @@ if model:
         "Engine_Size": [engine_size],
         "Fuel_Type": [fuel_type],
         "Transmission": [transmission],
-        "Milleage": [mileage],
+        "Mileage": [mileage],  # Ajout de 'Mileage'
         "Doors": [doors],
-        "Owner_count": [owner_count]
+        "Owner_Count": [owner_count],  # Ajout de 'Owner_Count'
+        "Year": [year]  # Ajout de 'Year'
     })
 
     # Prédiction
