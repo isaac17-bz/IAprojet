@@ -52,6 +52,6 @@ if model:
     if st.button("Prédire le prix"):
         try:
             prediction = model.predict(input_data)
-            st.success(f"💰 Prix estimé : {int(prediction[0]):,} DZD")
+            st.success(f"💰 Prix estimé : {int(prediction[0]):,} $")
         except Exception as e:
             st.error(f"Erreur lors de la prédiction : {e}")
